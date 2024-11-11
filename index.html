@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Веб-сайт випускників ППК НТУ ХПІ</title>
+</head>
+<body>
+    <header>
+        <!-- логотипчик -->
+        <div class="logo center-logo">
+            <img src="college-logo.png" alt="Логотип ППК НТУ ХПІ" class="logo-img">
+        </div>
+        <h1 class="site-title">Веб-сайт випускників ППК НТУ ХПІ</h1>
+
+        <!-- кнопочки навігації -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="vacancies.html">Вакансії</a></li>
+                <li><a href="links.html">Посилання</a></li>
+                <li><a href="news.html">Новини</a></li>
+            </ul>
+        </nav>
+        <div class="profile-access">
+            <img src="photo-avatar.png" alt="Аватар" class="avatar">
+            <span class="profile-text">Ввійдіть, щоб отримати доступ до профілю</span>
+        </div>
+    </header>
+
+   <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="profile-access"></div>
+            <h2>Ласкаво просимо на сайт випускників</h2>
+            <p>Тут ви знайдете вакансії, новини та корисні посилання для випускників коледжу.</p>
+
+            <!-- кнопочки входу і реєстрації -->
+            <div class="main-buttons">
+                <button class="main-button-large" onclick="togglePopup('loginPopup')">Вхід</button>
+                <button class="main-button-large" onclick="togglePopup('registerPopup')">Реєстрація</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Попапчики -->
+    <div id="successPopup" class="popup-message" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="togglePopup('successPopup')">&times;</span>
+            <p id="successMessage"></p>
+        </div>
+    </div>
+
+    <!-- Форма для входа -->
+    <div id="loginPopup" class="popup-form" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="togglePopup('loginPopup')">&times;</span>
+            <h2>Вхід</h2>
+            <form onsubmit="handleLogin(event)">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Пароль:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit">Ввійти</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Форма для реєстрації -->
+    <div id="registerPopup" class="popup-form" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="togglePopup('registerPopup')">&times;</span>
+            <h2>Реєстрація</h2>
+            <form onsubmit="handleRegister(event)">
+                <label for="register-name">Ім'я:</label>
+                <input type="text" id="register-name" name="name" required>
+                <label for="register-email">Email:</label>
+                <input type="email" id="register-email" name="email" required>
+                <label for="register-password">Пароль:</label>
+                <input type="password" id="register-password" name="password" required>
+                <button type="submit">Зареєструватися</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Випускники ППК НТУ ХПІ. Всі права захищені.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+header {
+    background-color: #1a1a1a;
+    box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.center-logo {
+    position: relative;
+    margin: 0 auto;
+}
+/* тут лого коледжа */
+.logo {
+    display: inline-block;
+}
+
+.logo-img {
+    width: 80px;
+    height: auto;
+}
+
+.profile-access {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 2;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-text {
+    font-size: 18px;
+    color: #f0f0f0;
+}
+
+header h1 {
+    color: #e60000;
+    font-size: 30px;
+    margin: 0;
+    padding: 5px 0;
+    letter-spacing: 1px;
+}
+/* навігація */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #2e2e2e;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0px 4px 6px rgba(255, 0, 0, 0.3);
+}
+
+nav ul li a:hover {
+    background-color: #e60000;
+    color: #f0f0f0;
+}
+.main-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+/* великі кнопочки вхід і реєстрація на головній */
+.main-button-large, .main-button {
+    background-color: #e60000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 40px;
+    margin: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+}
+
+.main-button-large:hover, .main-button:hover {
+    background-color: #b30000;
+    box-shadow: 0 6px 15px rgba(255, 0, 0, 0.7);
+}
+
+/* Попап формочки */
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2e2e2e;
+    color: #f0f0f0;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000;
+}
+
+.popup-form .popup-content {
+    text-align: left;
+}
+
+.popup-form .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: #f0f0f0;
+    font-size: 20px;
+}
+
+.popup-content h2 {
+    color: #e60000;
+    margin-bottom: 20px;
+}
+
+.popup-content label {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.popup-content input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #e60000;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+.popup-content button {
+    background-color: #e60000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+    background-color: #b30000;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('college-photo.jpg') no-repeat center center/cover;
+    filter: blur(8px);
+    z-index: 0;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #f0f0f0;
+    padding-top: 150px;
+}
+
+.hero .content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #e60000;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+}
+
+.hero .content p {
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* сторінка посилання */
+.links {
+    padding: 20px;
+    text-align: center;
+}
+
+.links h2 {
+    font-size: 36px;
+    color: #e60000;
+    margin-bottom: 20px;
+}
+
+.links-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+/* сторінка новини */
+.news-item {
+    display: flex; 
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(255, 0, 0, 0.3);
+}
+
+.news-content {
+    flex: 1; 
+}
+
+.news-image {
+    width: 150px; 
+    height: auto;
+    border-radius: 10px; 
+    margin-left: 15px; 
+}
+
+.news-content h3 {
+    color: #e60000; 
+    margin: 0 0 10px; 
+}
+
+.news-content p {
+    margin: 5px 0; 
+    color: #f0f0f0; 
+}
+
+.link-box {
+    background-color: #2e2e2e;
+    color: #f0f0f0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.link-box:hover {
+    transform: scale(1.05);
+}
+
+.social-logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.link-text {
+    color: #e60000;
+    font-size: 24px;
+    text-decoration: none;
+    display: block;
+}
+/* сторінка з вакансіями */
+.vacancy {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(255, 0, 0, 0.3);
+    margin: 20px 0;
+    padding: 20px;
+    display: block;
+    height: auto;
+}
+
+.vacancy h3 {
+    margin: 0 0 10px 0;
+}
+
+.vacancy p {
+    margin: 5px 0;
+    color: #f0f0f0;
+}
+
+.apply-button {
+    background-color: #e60000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.apply-button:hover {
+    background-color: #c70000;
+}
+
+.vacancies-list .vacancy, .news-list article {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+/* успішний попапчик */
+#successPopup {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #e60000;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#successPopup p {
+    margin: 0;
+}
+
+.user-name-display {
+    color: #e60000;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+}
